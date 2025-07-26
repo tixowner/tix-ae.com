@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 210 65% 26%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 29%;
+    --accent: 20 91% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 33%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 210 65% 26%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 71%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
+    --ring: 0 0% 83%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-tix-white text-tix-black;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* تخصيص الألوان للعناصر المختلفة */
+@layer components {
+  /* الهيدر */
+  .tix-header {
+    @apply bg-tix-black text-tix-white border-b border-tix-gray-light;
+  }
+
+  /* الأزرار الرئيسية */
+  .tix-btn-primary {
+    @apply bg-tix-blue-primary hover:bg-tix-blue-dark text-tix-white;
+  }
+
+  /* أزرار العروض */
+  .tix-btn-deal {
+    @apply bg-tix-red-primary hover:bg-tix-red-dark text-tix-white;
+  }
+
+  /* الكروت */
+  .tix-card {
+    @apply bg-tix-white border border-tix-gray-light shadow-sm;
+  }
+
+  /* النصوص الثانوية */
+  .tix-text-secondary {
+    @apply text-tix-gray-dark;
+  }
+
+  /* الخلفيات الثانوية */
+  .tix-bg-secondary {
+    @apply bg-tix-gray-light;
+  }
+
+  /* شارات الخصم */
+  .tix-badge-discount {
+    @apply bg-tix-red-primary text-tix-white;
+  }
+
+  /* شارات الحالة */
+  .tix-badge-status {
+    @apply bg-tix-blue-primary text-tix-white;
+  }
+}
+
+/* تأثيرات خاصة */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #1a3c6d 0%, #ea580c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-tix {
+    box-shadow: 0 4px 6px -1px rgba(26, 60, 109, 0.1), 0 2px 4px -1px rgba(26, 60, 109, 0.06);
+  }
+
+  .border-tix {
+    border-color: #e5e5e5;
+  }
+}
+
+/* تحسينات للنصوص العربية */
+body {
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* تحسين الأزرار */
+button:focus {
+  outline: 2px solid #1a3c6d;
+  outline-offset: 2px;
+}
+
+/* تحسين الروابط */
+a:hover {
+  transition: all 0.2s ease-in-out;
+}
+
+/* تحسين الكروت */
+.card-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
